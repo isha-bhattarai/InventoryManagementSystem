@@ -1,16 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.isha.inventorymanagementsystem.HomeController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.geometry.Insets?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.GridPane?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.isha.inventorymanagementsystem.HomeController">
+
+            <VBox spacing="20" styleClass="tableVBox" alignment="CENTER" style="-fx-padding: 20px;">
+                <Label text="All Products"/>
+
+                <TableView fx:id="tableView" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="600.0">
+                    <columns>
+                        <TableColumn fx:id="id" text="ID"/>
+                        <TableColumn fx:id="name" text="Name"/>
+                        <TableColumn fx:id="quantity" text="Quantity"/>
+                        <TableColumn fx:id="description" text="Description"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <VBox spacing="20" style="-fx-padding: 20px;">
+                <VBox alignment="CENTER">
+                    <Label text="Create Product" style="-fx-font-size: 15px; -fx-font-weight: bold"/>
+                </VBox>
+                <Label text="Product Name:"/>
+                <TextField fx:id="productName" promptText="Product Name" styleClass="input-field"/>
+                <Label text="Product Price:"/>
+                <TextField fx:id="productQuantity" promptText="Product Quantity" styleClass="input-field"/>
+                <Label text="Product Description:"/>
+                <TextArea fx:id="productDescription" promptText="Product Description" styleClass="text-area"/>
+                <Button text="Add Product" onAction="#addProduct" styleClass="add-button"/>
+                <Label fx:id="responseLabel" styleClass="response-label"/>
+            </VBox>
+
+
 </VBox>
